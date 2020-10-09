@@ -2,6 +2,7 @@ body{
     margin: auto;
     background-color: brown;
 }
+/* START NAVIGATION BAR */
 .nav {
     position: sticky;
 }
@@ -33,7 +34,7 @@ li a:hover:not(.active) {
     background-color: coral;
     font-weight: bold ;
   }
-
+/* END NAVIGATION BAR */
 .video{
     position: relative;
     margin: 45px 34%; 
@@ -81,10 +82,15 @@ button{
 a{
     text-decoration: none;
 }
-
+img{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 150px;
+}
 /* END */
 .footer {
-    position: fixed;
+    position: sticky;
     left: 0;
     bottom: 0;
     width: 100%;
