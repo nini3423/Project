@@ -158,3 +158,11 @@ img {
     color: white;
     text-align: center;
  }
+ .video{
+  position: relative;
+  margin: 45px 34%; 
+}
+h2, p, h3{ 
+  text-align: center;
+  color: whitesmoke;
+}

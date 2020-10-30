@@ -46,3 +46,23 @@ li a:hover:not(.active) {
     color: white;
     text-align: center;
  }
+ img{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+ }
+ .koto img {
+    width: 30%;
+    height: 25%;
+ }
+
+ h2, p{
+   text-align: center;
+   color: rgb(247, 245, 245);
+   margin-left: 20%;
+   margin-right: 20%;
+ }
+ .korean img{
+    width: 30%;
+    height: 25%;
+ }
