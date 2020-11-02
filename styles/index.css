@@ -40,7 +40,10 @@ li a:hover:not(.active) {
 /* END NAVIGATION BAR */
 .video{
     position: relative;
-    margin: 45px 34%; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    padding-bottom: 30px;
   }
 
 h1{
@@ -60,6 +63,7 @@ td {
     margin-left: auto;
     padding: 10px 20px;
     width: 40%;
+    vertical-align: auto;
 }
 
 .label{
@@ -77,6 +81,7 @@ button{
     color: white;
     border-radius: 20px;
     font-weight: bold;
+    margin-top: 15px;
 }
 a{
     text-decoration: none;
