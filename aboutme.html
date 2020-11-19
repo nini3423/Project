@@ -26,7 +26,7 @@
         </ul>
     </div> 
 
-    <img src="images/IMG_1653.JPG" alt="zither" title="picture of Lily"/> 
+    <img src="images/IMG_1653.JPG" alt="zither" title="picture of Lily" id="she"/> 
     <div class=" about">
         <h1>
             Lily Liu 刘津溢
@@ -39,7 +39,24 @@
             She is a high performing student in her school, receiving full four year Diversity Leadership Scholarship.   
         </p>
     </div>
+    <script>
+        function enlarge(){
+        let myImage = document.getElementById("she");
+        let w = myImage.width;
+        w = w* 1.75;
+        myImage.width = w ;
+      }
+      document.getElementById("she").onmouseover = enlarge;
+      console.log("success")
 
+      function originalsize() {
+        let myImage = document.getElementById("she");
+        let w = myImage.width;
+        w = w / 1.75;
+        myImage.width = w;
+      }
+      document.getElementById("she").onmouseout = originalsize;
+    </script>
     <div class="footer">
         <ul>
             <li><a href="contact.html">Contact the Artist</a></li>

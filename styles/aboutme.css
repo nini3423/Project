@@ -2,6 +2,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: brown;
     margin: auto;
+    background-image: url("../images/cherry.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* START NAVIGATION BAR */
@@ -46,9 +49,12 @@ img{
 }
 .about{
     text-align: center;
-    color: whitesmoke;
+    color: #f0dfe4;
     padding-left: 300px;
     padding-right: 300px;
+    background-color: salmon;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
 }
 .footer {
     position: sticky;

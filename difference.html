@@ -28,7 +28,7 @@
 
     <div class="chinese">
         <h2>Chinese Guzheng</h2>
-            <img src="images/guzheng.jpg" alt="Chinese guzheng" title="Chinese Guzheng"/>
+            <img src="images/guzheng.jpg" alt="Chinese guzheng" title="Chinese Guzheng" id="imgsa"/>
         <p>
             "Most modern guzheng have 21 or more strings but 16 and 18-string guzheng are still made. 100 years ago instruments with 16 metal strings were the most popular. Nylon-coated metal strings were invented in the 1950s and are the current favorite.
 
@@ -37,7 +37,7 @@ You can find zithers today with anything from 12-26 strings. Chinese zithers as 
     </div>
     <div class= "koto">
         <h2>Japanese Koto</h2>
-        <img id= koto src="images/koto-Kai-1.jpg" alt="koto" title="Japanese Koto"/>
+        <img id= koto src="images/koto-Kai-1.jpg" alt="koto" title="Japanese Koto" id="imgsa"/>
         <p>
             "Koto, also called kin, long Japanese board zither having 13 silk strings and movable bridges. The body of the instrument is made of paulownia wood and is about 190 cm (74 inches) long.
             Performed by kneeling or seated on the floor. Koto is held off the floor by two legs or a bridge-storage box".
@@ -45,12 +45,30 @@ You can find zithers today with anything from 12-26 strings. Chinese zithers as 
     </div>
     <div class="korean">
         <h2>Korean Kayagum</h2>
-        <img src="images/kayagum.jpg" alt="kayagum" title="Korean Kayagum"/>
+        <img src="images/kayagum.jpg" alt="kayagum" title="Korean Kayagum" id="imgsa"/>
         <p>
             "Kayagŭm, also spelled kayakŭm or kayakeum or gayageum. Korean board zither with 12 silk strings, 12 movable bridges, and a convex upper surface. Fashioned from paulownia wood, it forms a rectangle about 160 cm (62 inches) long and 30 cm (12 inches) wide".
         </p>
     </div>
+    <div>
+        <script>
+            function enlarge(){
+            let myImage = document.getElementById("imgsa");
+            let w = myImage.width;
+            w = w* 1.20;
+            myImage.width = w ;
+        }
+        document.getElementById("imgsa").onmouseover = enlarge;
 
+        function originalsize() {
+            let myImage = document.getElementById("imgsa");
+            let w = myImage.width;
+            w = w / 1.20;
+            myImage.width = w;
+        }
+        document.getElementById("imgsa").onmouseout = originalsize;
+        </script>
+    </div>
     <div class="footer">
         <ul>
             <li><a href="contact.html">Contact the Artist</a></li>

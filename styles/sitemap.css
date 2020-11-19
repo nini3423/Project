@@ -2,6 +2,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: brown;
     margin: auto;
+    background-image: url("../images/fall.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* START NAVIGATION BAR */
@@ -41,17 +44,22 @@ li a:hover:not(.active) {
 h1, p{
     text-align: center;
     color: rgb(236, 217, 217);
+    
 }
 
 a{
     text-decoration: none;
-    color: whitesmoke;
+    color: white;
 }
 dl{
     text-align: center;
     font-size: 23px;
     padding: 0;
-    margin: 0 0 3px 0;
+    margin: 180px 0 5px 0;
+    font-weight: bold;
+}
+dt{
+  margin-bottom: 10px;
 }
 .footer {
     position: absolute;

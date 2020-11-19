@@ -2,6 +2,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: brown;
     margin: auto;
+    background-image: url("../images/dragon.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* START NAVIGATION BAR */

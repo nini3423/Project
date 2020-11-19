@@ -19,8 +19,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <script src="my-js-file.js" defer></script>
-</head>
-<body>
+</head> 
+<body id="back">
 <div class="nav"> 
     <ul class="nav">
         <li><a class="active" href="index.html">Home</a></li>
@@ -30,8 +30,10 @@
         <li><a href="aboutme.html">About Artist</a></li>
     </ul>
 </div> 
-<h1>All About Guzheng</h1>
-<h2> Featured Video</h2>
+<h1><span id="output">All About Guzheng </span></h1>
+<h2> <span id="output">Featured Video </span></h2>
+<button onclick="changeBack()"> Click Button to Hide Background Image</button>
+
 <div class="video"> 
     <iframe width="560" 
         height="315" 
@@ -43,24 +45,37 @@
 <div class= table>
     <table>
         <tr>
-            <td class="label"> Events </td>
-            <td class="label"> Cultural Difference </td>
-            <td class="label"> About Artist </td>     
+            <td class="label"> <span id="output">Events </span></td>
+            <td class="label"> <span id="output"> Cultural Difference </span></td>
+            <td class="label"> <span id="output">About Artist </span></td>     
         </tr>
         <tr>
             <td class="description"> <img src="images/benefitconcert.png" alt="benefitconcert" title="benefitconcert"/> <br> 
                 <button type="button"> <a href="https://www.eventbrite.com/e/now-to-the-future-guzheng-benefit-concert-tickets-37391404698?utm_source=eb_email&utm_medium=email&utm_campaign=new_event_email&utm_term=viewmyevent_button#" >Book Ticket</a></button>
             </td>
-            <td class="description"> Did you know that there is a difference between "Guzheng" in different Countries? <br> 
+            <td class="description"> <span id="output">Did you know that there is a difference between "Guzheng" in different Countries? </span> <br> 
                 <button type="button"> <a href="history.html" >Learn More</a></button>
             </td>
-            <td class="description"> Lily Liu, college student at Babson College has over 10,000 total subscribers on YouTube and Facebook. 
-                She is based in California and Boston and performs to share her Chinese culture with others. <br> 
+            <td class="description"> <span id="output"> Lily Liu, college student at Babson College has over 10,000 total subscribers on YouTube and Facebook. 
+                She is based in California and Boston and performs to share her Chinese culture with others. </span><br> 
                 <button type="button"> <a href="aboutme.html" > Click here to Learn More</a></button>
             </td>
         </tr>
         
     </table>
+</div>
+
+<div>
+    <script>
+        function changeBack() {
+            document.body.style.backgroundImage = 'none';
+            document.getElementById("output").style.color = 'white'
+            return false;
+            
+        }
+        
+        console.log("success")
+    </script>
 </div>
 
 <div class="footer">
