@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Beat Counter</title>
+    <link rel="stylesheet" type="text/css" href="styles/game.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+</head>
+ 
+<body>
+
+    <div class="nav"> 
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="updates.html">Popular Pieces</a></li>
+            <li><a href="history.html">Instrument History</a></li>
+            <li><a href="difference.html">Cultural Difference</a></li>
+            <li><a href="aboutme.html">About Artist</a></li>
+        </ul>
+    </div> 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        let speed = 120, //Gives the orignal speed for the 
+            arrClick = [],  //test the speed and keep the record as number 
+            clickTime = 0,  //test the click time 
+            s = Date.now(), //records each of the click time to calculate the time in between 
+            time = 0,   //
+            isPlay = false, //checks whether it is currently playing 
+            speedMsg = document.getElementById("speed"),    //shows the speed in the center of the screen 
+            rangeValue = document.getElementById("rangeValue"), //gives the range value
+            showSpeed = () => rangeValue.value = speedMsg.innerText = speed;    //shows the most relevant speed
+ 
+        //Click button test
+        document.getElementById("btnTest").addEventListener("click", function () {
+        let lastSpeed = Math.floor(60000 / (Date.now() - s));
+            if (lastSpeed - arrClick[arrClick.length - 1] > 60) { arrClick = []; }  //If the last speed's difference is more than 60 then clear and retest
+                arrClick.push(lastSpeed);
+            if (arrClick.length > 1) {
+                    //Takes Average
+                speed = Math.ceil((arrClick.reduce((sum, n) => sum + n) - arrClick[0]) / (arrClick.length - 1));
+            if (arrClick.length > 61) arrClick.shift(); //The length should be at max of 60 not counting 0
+ 
+            }
+                showSpeed();
+                s = Date.now();
+                document.getElementById("btnStop").click(); //stop the click once stop button pressed
+            });
+ 
+        //start button
+        document.getElementById("btnStart").addEventListener("click", function () {
+            isPlay = true; //if it is in play then it should play 
+            play();
+            this.style.display = "none";
+            document.getElementById("btnStop").style.display = "inline-block";
+        });
+ 
+        //stop button
+        document.getElementById("btnStop").addEventListener("click", function () {
+            window.clearTimeout(time); //should clear out the time 
+            isPlay = false;
+            this.style.display = "none"; //should appear only when start is clicked 
+            document.getElementById("btnStart").style.display = "inline-block";
+        });
+ 
+        // action for lower speed button
+        document.getElementById("btnSub").addEventListener("click", function () {
+            speed--;
+            showSpeed();
+        });
+ 
+        // action for increase speed button
+        document.getElementById("btnAdd").addEventListener("click", function () {
+            speed++;
+            showSpeed();
+        });
+ 
+        // Range changer scrolling setting 
+        rangeValue.addEventListener("change", function () {
+            speed = this.value * 1;
+            showSpeed();
+        });
+ 
+        // start the play
+        let play = () => {
+            window.clearTimeout(time);
+            startSound();
+            if (isPlay) {
+                time = window.setTimeout(play, Math.floor(60000 / speed));
+            };
+        }
+ 
+        let audioCtx = new AudioContext();
+        // Playssound cite: Javascripture
+        let startSound = () => {
+            let oscillator = audioCtx.createOscillator();
+            let gainNode = audioCtx.createGain();
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(220, audioCtx.currentTime);
+            oscillator.frequency.linearRampToValueAtTime(50, audioCtx.currentTime + 0.1);
+            gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(1, audioCtx.currentTime + 0.01);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.5);
+            oscillator.start(audioCtx.currentTime);
+            oscillator.stop(audioCtx.currentTime + 0.5);
+        }
+    });
+    </script>
+    <section>
+        
+        <button id="btnSub"> <i class="fa fa-minus"></i></button>
+        <div id="speed">120</div>
+        <button id="btnAdd"> <i class="fa fa-plus"></i></button>
+        <div><input type="range" style="width:100%;" min="20" max="300" id="rangeValue" value="120"></div>'
+        <button id="btnStart"> <i class="fa fa-play"></i></button>
+        <button id="btnStop" > <i class="fa fa-stop"></i></button>
+        <br>
+        <button id="btnTest">Click Random Speed</button>
+        <div id="msg"></div>
+
+    </section>
+    <div class="footer">
+        <ul>
+            <li><a href="contact.html">Contact the Artist</a></li>
+            <li><a class="active" href="game.html">Beat Counter</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+            <li><a href="credit.html">Credit</a></li>
+        </ul>
+    </div>   
+</body>
+ 

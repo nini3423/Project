@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: brown;
+    margin: auto;
+}
+
+/* START NAVIGATION BAR */
+.nav {
+    position: sticky;
+}
+ul {
+    list-style-type: none;
+    margin: 50;
+    padding: 50;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+li {
+    float: left;
+  }
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+li a:hover:not(.active) {
+    background-color: rgb(206, 117, 81);
+  }
+  
+.active {
+    background-color: coral;
+    font-weight: bold ;
+  }
+/* END NAVIGATION BAR */
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+ }
+
+body>section{
+    text-align: center;
+    padding: 120px;
+    width: 420px;
+    margin: auto;}
+
+button {
+    padding: 5px 10px;
+}
+#btnTest {
+    padding: 15px 30px;
+    font-size: 20px;
+}
+#btnStop {
+    display: none;
+    vertical-align: middle;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+#btnStart{
+    vertical-align: middle;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+#speed{
+    font-size: 50px;
+    padding:0 20px;
+    width: 100px;
+    margin-top: 5%;
+    text-align: center;
+}
+#msg{
+    height: 20px;
+    padding-top: 5px; 
+    font-size: 9px;
+    text-align: center;
+}
